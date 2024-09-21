@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout source code from Git repository
-                git 'https://github.com/your-username/your-node-app-repo.git'
+                git 'https://github.com/Rupeshkr004/Jenkins-projects.git'
             }
         }
         
@@ -26,14 +26,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Build Docker image (optional if using Docker)
-                sh 'docker build -t your-image-name .'
+                sh 'docker build -t jenkins-firstproject .'
             }
         }
 
         stage('Deploy') {
             steps {
                 // Run the app in Docker (or use any other deploy method)
-                sh 'docker run -d -p 3000:3000 your-image-name'
+                sh 'docker run -dt -p 3000:3000 --name jennksfirst-container jenkins-firstproject'
             }
         }
     }
